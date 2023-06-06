@@ -160,9 +160,9 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:target.com
 
-### High % inurl keywords
+### Configuration files
 
-> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:target[.]com
+> inurl:config | inurl:env | inurl:setting | inurl:backup | ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini site:target[.]com
 
 ### Sensitive Parameters
 
