@@ -42,9 +42,13 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com intext:"index of" /etc/shadow
 
-> site:target.com "index.of" id_rsa
+> site:target.com "index of" id_rsa
 
-> site:target.com "index.of" private.key
+> site:target.com "index of" private.key
+
+> site:target.com "index of" inurl:.git
+
+> site:target.com "intitle:"index of" .git/hooks/
 
 ### PHP extension w/ parameters
 
