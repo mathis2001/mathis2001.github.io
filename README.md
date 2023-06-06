@@ -23,6 +23,13 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 ### Directory listings
 
 > site:target.com intext:"index of /"
+> site:target.com intitle:"index of" "docker-compose.yml"
+> site:target.com intitle:"index of"|"access_token.json"
+> site:target.com intitle:"index of" "config.json"
+> site:target.com intitle:"index of" "service-Account-Credentials.json" | "creds.json"
+> site:target.com intitle:"index of" "db.json"
+> site:target.com intitle:"index of" "credentials.json"
+> site:target.com intitle:"index of" "awsconfig.json"
 
 ### PHP extension w/ parameters
 
