@@ -206,13 +206,53 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > inurl:/wp-admin/admin-ajax.php
 
+> intext:"Index" inurl:"wp-" -wordpress.org -stackexchange -github
+
+> inurl:"/wp-json/wp/v2/users/" "id":1,"name":" -wordpress.stackexchange.com -stackoverflow.com
+
+> inurl:"/wp-content/uploads"
+
+> inurl:"wp-register.php" -wordpress.com -wordpress.org -github
+
+> intitle:"index of" "wp-config.php.bak"
+
 ### Drupal
 
 > intext:"Powered by" & intext:Drupal & inurl:user
 
+> intext:"Powered by Drupal" inurl:"/node/1" -drupal.com -drupal.org -github
+
+> inurl:"sites/all/modules/ckeditor" -drupalcode.org
+
 ### Joomla
 
 > site:*/joomla/login
+
+> inurl:"/libraries/joomla/database/"
+
+> inurl:"/v1/config/application"
+
+### Symfony
+
+> intitle:"index of" "symfony/config"
+
+> inurl:"_fragment" | inurl:"_profiler"
+
+> inurl:"_profiler/phpinfo"
+
+> inurl:"_profiler/open"
+
+### Ruby on rails
+
+> inurl:"index.rb"
+
+> inurl:"/config/database.yml"
+
+> inurl:"/config/initializers/secret_token.rb"
+
+> inurl:"/db/seeds.rb"
+
+> inurl:"/db/development.sqlite3"
 
 
 ---
