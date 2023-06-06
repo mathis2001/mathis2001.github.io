@@ -20,6 +20,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:"target[.]com" ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
 
+### Directory listings
+
+> site:target.com intext:"index of /"
+
 ### PHP extension w/ parameters
 
 > site:target.com ext:php inurl:?
