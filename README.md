@@ -148,7 +148,7 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ### Open Redirect prone parameters
 
-> inurl:url= | inurl:return= | inurl:next= | inurl:redir= inurl:http site:target.com
+> inurl:"url=" | inurl:"return=" | inurl:"next=" | inurl:"redir=" | inurl:"http" | inurl:"%3Dhttp" | inurl:"%3D%2F" | inurl:"redirect"= | inurl:"redirecturl=" | inurl:"redirect_url=" | inurl:"returnurl=" | inurl:"relaystate=" | inurl:"forward=" | inurl:"forwardurl=" | inurl:"forward_url=" | inurl:"uri=" | inurl:"dest=" | inurl:"destination=" site:target.com
 
 ### SQLi Prone Parameters
 
