@@ -194,6 +194,14 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com ”choose file”
 
+### Dependency confusion (packages files)
+
+> site:*target.com inurl:/ui/package.json
+
+> site:*target.com inurl:/ui/package-lock.json
+
+> site:*target.com inurl:/package.json
+
 ## Dorks that work better w/o domain
 
 ### Bug Bounty programs and Vulnerability Disclosure Programs
