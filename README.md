@@ -212,6 +212,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:*target.com inurl:/package.json
 
+### Find employees
+
+> site:linkedin.com "target[.]com"
+
 ## Dorks that work better w/o domain
 
 ### Bug Bounty programs and Vulnerability Disclosure Programs
