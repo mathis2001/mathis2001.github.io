@@ -234,59 +234,59 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ### Apache Server Status Exposed
 
-> site:*/server-status apache
+> site:target.com inurl:server-status apache
 
 ### WordPress
 
-> inurl:/wp-admin/admin-ajax.php
+> site:target.com inurl:/wp-admin/admin-ajax.php
 
-> intext:"Index" inurl:"wp-" -wordpress.org -stackexchange -github
+> site:target.com intext:"Index" inurl:"wp-" -wordpress.org -stackexchange -github
 
-> inurl:"/wp-json/wp/v2/users/" "id":1,"name":" -wordpress.stackexchange.com -stackoverflow.com
+> site:target.com inurl:"/wp-json/wp/v2/users/" "id":1,"name":" -wordpress.stackexchange.com -stackoverflow.com
 
-> inurl:"/wp-content/uploads"
+> site:target.com inurl:"/wp-content/uploads"
 
-> inurl:"wp-register.php" -wordpress.com -wordpress.org -github
+> site:target.com inurl:"wp-register.php" -wordpress.com -wordpress.org -github
 
-> intitle:"index of" "wp-config.php.bak"
+> site:target.com intitle:"index of" "wp-config.php.bak"
 
 ### Drupal
 
-> intext:"Powered by" & intext:Drupal & inurl:user
+> site:target.com intext:"Powered by" & intext:Drupal & inurl:user
 
-> intext:"Powered by Drupal" inurl:"/node/1" -drupal.com -drupal.org -github
+> site:target.com intext:"Powered by Drupal" inurl:"/node/1" -drupal.com -drupal.org -github
 
-> inurl:"sites/all/modules/ckeditor" -drupalcode.org
+> site:target.com inurl:"sites/all/modules/ckeditor" -drupalcode.org
 
 ### Joomla
 
-> site:*/joomla/login
+> site:target.com site:*/joomla/login
 
-> inurl:"/libraries/joomla/database/"
+> site:target.com inurl:"/libraries/joomla/database/"
 
-> inurl:"/v1/config/application"
+> site:target.com inurl:"/v1/config/application"
 
 ### Symfony
 
-> intitle:"index of" "symfony/config"
+> site:target.com intitle:"index of" "symfony/config"
 
-> inurl:"_fragment" | inurl:"_profiler"
+> site:target.com inurl:"_fragment" | inurl:"_profiler"
 
-> inurl:"_profiler/phpinfo"
+> site:target.com inurl:"_profiler/phpinfo"
 
-> inurl:"_profiler/open"
+> site:target.com inurl:"_profiler/open"
 
 ### Ruby on rails
 
-> inurl:"index.rb"
+> inurl:"index.rb" "target.com"
 
-> inurl:"/config/database.yml"
+> inurl:"/config/database.yml" "target.com"
 
-> inurl:"/config/initializers/secret_token.rb"
+> inurl:"/config/initializers/secret_token.rb" "target.com"
 
-> inurl:"/db/seeds.rb"
+> inurl:"/db/seeds.rb" "target.com"
 
-> inurl:"/db/development.sqlite3"
+> inurl:"/db/development.sqlite3" "target.com"
 
 
 ---
