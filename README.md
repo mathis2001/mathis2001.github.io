@@ -18,7 +18,7 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ### Find exposed documents
 
-> site:target.com ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
+> site:"target[.]com ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
 
 ### PHP extension w/ parameters
 
