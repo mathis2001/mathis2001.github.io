@@ -136,16 +136,6 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:docs.google.com inurl:"/d/" "target[.]com"
 
-### API documentation
-
-> site:target.com inurl:/swagger-ui.html
-
-> site:target.com inurl:/api/swagger
-
-> site:target.com inurl:/api/v1/docs | inurl:/api/v2/docs | inurl:/api/v3/docs
-
-> site:target.com inurl:/api/apidocs
-
 ### XSS prone parameters
 
 > inurl:q= | inurl:s= | inurl:search= | inurl:query= inurl:& site:target.com
@@ -189,6 +179,14 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 ### API Docs
 
 > inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"target[.]com"
+
+> site:target.com inurl:/swagger-ui.html
+
+> site:target.com inurl:/api/swagger
+
+> site:target.com inurl:/api/v1/docs | inurl:/api/v2/docs | inurl:/api/v3/docs
+
+> site:target.com inurl:/api/apidocs
 
 ### File upload endpoints
 
