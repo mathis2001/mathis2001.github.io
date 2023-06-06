@@ -8,13 +8,15 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ---
 
-### Find sub-domains
-
-> site:*.target.com
-
 ### Broad domain search w/ negative search
 
 > site:target.com -www -shop -share -ir -mfa
+
+### Find subdomains
+
+> site:*.target.com
+> site:*.*.target.com
+> site:*.*.*.target.com
 
 ### PHP extension w/ parameters
 
