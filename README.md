@@ -7,6 +7,7 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 </p>
 
 ---
+
 ### Find sub-domains
 
 > site:*.target.com
