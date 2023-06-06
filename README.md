@@ -20,6 +20,14 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:"target[.]com" ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
 
+### Find exposed git files
+
+> site:target.com "index of" inurl:.git
+
+> site:target.com "intitle:"index of" .git/hooks/
+
+> site:target.com filetype:git | ext:git
+
 ### Directory listings
 
 > site:target.com intext:"index of /"
