@@ -2,111 +2,113 @@
 
 A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
+<p>
+Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 </p>
 
 ---
 
 ### Broad domain search w/ negative search
 
-> site:example.com -www -shop -share -ir -mfa
+> site:target.com -www -shop -share -ir -mfa
 
 ### PHP extension w/ parameters
 
-> site:example.com ext:php inurl:?
+> site:target.com ext:php inurl:?
 
 ### Disclosed XSS and Open Redirects
 
-> site:openbugbounty.org inurl:reports intext:"example.com"
+> site:openbugbounty.org inurl:reports intext:"target.com"
 
 ### Juicy Extensions
 
-> site:"example[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
+> site:"target[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
 
 ### Code Leaks
 
-> site:pastebin.com "example.com"
+> site:pastebin.com "target.com"
 
-> site:jsfiddle.net "example.com"
+> site:jsfiddle.net "target.com"
 
-> site:codebeautify.org "example.com"
+> site:codebeautify.org "target.com"
 
-> site:codepen.io "example.com"
+> site:codepen.io "target.com"
 
 ### Cloud Storage
 
-> site:s3.amazonaws.com "example.com"
+> site:s3.amazonaws.com "target.com"
 
-> site:blob.core.windows.net "example.com"
+> site:blob.core.windows.net "target.com"
 
-> site:googleapis.com "example.com"
+> site:googleapis.com "target.com"
 
-> site:drive.google.com "example.com"
+> site:drive.google.com "target.com"
 
-> site:dev.azure.com "example[.]com"
+> site:dev.azure.com "target[.]com"
 
-> site:onedrive.live.com "example[.]com"
+> site:onedrive.live.com "target[.]com"
 
-> site:digitaloceanspaces.com "example[.]com"
+> site:digitaloceanspaces.com "target[.]com"
 
-> site:sharepoint.com "example[.]com"
+> site:sharepoint.com "target[.]com"
 
-> site:s3-external-1.amazonaws.com "example[.]com"
+> site:s3-external-1.amazonaws.com "target[.]com"
 
-> site:s3.dualstack.us-east-1.amazonaws.com "example[.]com"
+> site:s3.dualstack.us-east-1.amazonaws.com "target[.]com"
 
-> site:dropbox.com/s "example[.]com"
+> site:dropbox.com/s "target[.]com"
 
-> site:box.com/s "example[.]com"
+> site:box.com/s "target[.]com"
 
-> site:docs.google.com inurl:"/d/" "example[.]com"
+> site:docs.google.com inurl:"/d/" "target[.]com"
 
 ### XSS prone parameters
 
-> inurl:q= | inurl:s= | inurl:search= | inurl:query= inurl:& site:example.com
+> inurl:q= | inurl:s= | inurl:search= | inurl:query= inurl:& site:target.com
 
 ### Open Redirect prone parameters
 
-> inurl:url= | inurl:return= | inurl:next= | inurl:redir= inurl:http site:example.com
+> inurl:url= | inurl:return= | inurl:next= | inurl:redir= inurl:http site:target.com
 
 ### SQLi Prone Parameters
 
-> inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:example.com
+> inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:target.com
 
 ### SSRF Prone Parameters
 
-> inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com
+> inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:target.com
 
 ### LFI Prone Parameters
 
-> inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:example.com
+> inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:target.com
 
 ### RCE Prone Parameters
 
-> inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com
+> inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:target.com
 
 ### High % inurl keywords
 
-> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example[.]com
+> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:target[.]com
 
 ### Sensitive Parameters
 
-> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example[.]com
+> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:target[.]com
 
 ### JFrog Artifactory
 
-> site:jfrog.io "example[.]com"
+> site:jfrog.io "target[.]com"
 
 ### Firebase
 
-> site:firebaseio.com "example[.]com"
+> site:firebaseio.com "target[.]com"
 
 ### API Docs
 
-> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"example[.]com"
+> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"target[.]com"
 
 ### File upload endpoints
 
-> site:example.com ”choose file”
+> site:target.com ”choose file”
 
 ## Dorks that work better w/o domain
 
