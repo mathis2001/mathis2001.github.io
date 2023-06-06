@@ -38,6 +38,14 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com intitle:"index of" "awsconfig.json"
 
+> site:target.com intext:"index of" /etc/passwd
+
+> site:target.com intext:"index of" /etc/shadow
+
+> site:target.com "index.of" id_rsa
+
+> site:target.com "index.of" private.key
+
 ### PHP extension w/ parameters
 
 > site:target.com ext:php inurl:?
@@ -50,7 +58,7 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:"target[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
 
-### Code Leaks
+### Code Leaks / External websites leaks
 
 > site:pastebin.com "target.com"
 
@@ -59,6 +67,42 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 > site:codebeautify.org "target.com"
 
 > site:codepen.io "target.com"
+
+> site:scribd.com "target.com"
+
+> site:npmjs.com "target.com"
+
+> site:npm.runkit.com "target.com"
+
+> site:libraries.co "target.com"
+
+> site:ycombinator.com "target.com"
+
+> site:coggle.it "target.com"
+
+> site:papaly.com "target.com"
+
+> site:trello.com "target.com"
+
+> site:prezi.com "target.com"
+
+> site:jsdelivr.net "target.com"
+
+> site:codeshare.io "target.com"
+
+> site:sharecode.io "target.com"
+
+> site:repl.it "target.com"
+
+> site:gitter.im "target.com"
+
+> site:bitbucket.org "target.com"
+
+> site:zoom.us "target.com"
+
+> site:atlassian.com "target.com"
+
+> inurl:gitlab "target.com"
 
 ### Cloud Storage
 
@@ -87,6 +131,16 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 > site:box.com/s "target[.]com"
 
 > site:docs.google.com inurl:"/d/" "target[.]com"
+
+### API documentation
+
+> site:target.com inurl:/swagger-ui.html
+
+> site:target.com inurl:/api/swagger
+
+> site:target.com inurl:/api/v1/docs | inurl:/api/v2/docs | inurl:/api/v3/docs
+
+> site:target.com inurl:/api/apidocs
 
 ### XSS prone parameters
 
