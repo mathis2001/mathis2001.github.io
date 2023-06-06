@@ -212,6 +212,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:*target.com inurl:/package.json
 
+### Cached versions
+
+> cache:target.com
+
 ### Find employees
 
 > site:linkedin.com "target[.]com"
