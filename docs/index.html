@@ -97,7 +97,7 @@
         let originalDorks = [];
 
         async function fetchDorks() {
-            const url = "https://raw.githubusercontent.com/TakSec/google-dorks-bug-bounty/main/README.md";
+            const url = "https://raw.githubusercontent.com/mathis2001/mathis2001.github.io/main/README.md";
             const response = await fetch(url);
             const text = await response.text();
 
@@ -159,7 +159,7 @@
             const dorkLinks = document.querySelectorAll(".dorkLink");
             dorkLinks.forEach((link, index) => {
                 const originalDork = originalDorks[index];
-                const updatedDork = originalDork.replace(/example(?:\[?\.\]?|\.)com/g, domain);
+                const updatedDork = originalDork.replace(/target(?:\[?\.\]?|\.)com/g, domain);
                 const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(updatedDork)}`;
 
                 link.textContent = updatedDork;
