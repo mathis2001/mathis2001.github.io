@@ -108,42 +108,6 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > "target.com" api_id
 
-#bash / #Python / #sql / #php ...
-language:<language> password
-language:<language> pwd
-language:<language> passwd
-language:<language> secret
-language:<language> private
-language:<language> ldap
-language:<language> ftp
-language:<language> dotfiles
-language:<language> JDBC
-language:<language> key-keys
-language:<language> send_keys-keys
-language:<language> send,key-keys
-language:<language> token
-language:<language> user
-language:<language> login-singin
-language:<language> passkey-passkeys
-language:<language> pass
-language:<language> credentials
-language:<language> config
-language:<language> security_credentials
-language:<language> connectionstring
-language:<language> ssh2_auth_password
-...
-...
-
-#Si vous trouvez un employé de la cible:
-user:<users> linkedin
-user:<users> full name
-user:<users> https://
-user:<users> ldap
-
-#entreprise
-org:<company> https://
-org:<company> host:
-
 ### Vecteurs externes
   
 > "target.com.atlassian"
@@ -254,32 +218,34 @@ org:<company> host:
   
 > "target.com" HOMEBREW_GITHUB_API_TOKEN language:shell
 
-#Trouver des noms d'utilisateurs
-user:name (user:admin)
-org:name (org:google type:users)
-in:login (<username> in:login)
-in:name (<username> in:name)
-fullname:firstname lastname (fullname:<name> <surname>)
-in:email (data in:email)
+### Find usernames
 
-#Utiliser les dates
-created:<2012–04–05
-created:>=2011–06–12
-created:2016–02–07 location:iceland
-created:2011–04–06..2013–01–14 <user> in:username
+> org:target.com (org:google type:users)
 
-#Utiliser les extensions
-extension:pem private
-extension:ppk private
-extension:sql mysql dump
-extension:sql mysql dump password
-extension:json api.forecast.io
-extension:json mongolab.com
-extension:yaml mongolab.com
-[WFClient] Password= extension:ica
-extension:avastlic “support.avast.com”
-extension:json googleusercontent client_secret
+> in:login (target.com in:login)
 
-#Autre
-##Slack web hook
-"https://hooks.slack[.]com/services/"
+> in:name (target.com in:name)
+
+> in:email (target.com in:email)
+
+### Extensions
+
+> "target.com" extension:pem private
+
+> "target.com" extension:ppk private
+
+> "target.com" extension:sql mysql dump
+
+> "target.com" extension:sql mysql dump password
+
+> "target.com" extension:json api.
+
+> "target.com" extension:json mongolab.com
+
+> "target.com" extension:yaml mongolab.com
+
+> "target.com" [WFClient] Password= extension:ica
+
+> "target.com" extension:avastlic “support.avast.com”
+
+> "target.com" extension:json googleusercontent client_secret
