@@ -266,6 +266,80 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com inurl:"/v1/config/application"
 
+> site:target.com "Consola de Joomla! Debug" inurl:index.php
+
+> site:target.com "Joomla! Administration Login" inurl:"/index.php"
+
+> site:target.com "com_joom12pic"
+
+> site:targer.com "com_joomlaflashfun"
+
+> site:target.com "index.php?option=com_news_portal" or "Powered by iJoomla News Portal"
+
+> site:target.com "powered by joomla 3.2" OR "powered by joomla 3.3" OR "powered by joomla 3.4"
+
+> site:target.com Joomla Component com_eportfolio Upload Vulnerability
+
+> site:target.com "com_ijoomla_rss"
+
+> site:target.com index2.php?option=com_joomlaboard
+
+> site:target.com intext:"joomla! 1.6 - Open Source Content Management"
+
+> site:target.com intext:"joomla! 1.7 - Open Source Content Management"
+
+> site:target.com intext:"~~Joomla1.txt" title:"Index of /"
+
+> site:target.com intext:Joomla 1.6 inurl:index.php/login
+
+> site:target.com intext:Joomla 1.6 inurl:index.php/registration
+
+> site:target.com intext:Joomla 1.7 inurl:index.php/login
+
+> site:target.com intext:Joomla 1.7 inurl:index.php/registration
+
+> site:target.com intitle:"Index of /" "joomla_update.php"
+
+> site:target.com intitle:"Joomla - Web Installer"
+
+> site:target.com inurl:"com_ijoomla_archive"
+
+> site:traget.com inurl:"com_joomlaradiov5"
+
+> site:target.com inurl:"index.php?option=com_bookjoomlas"
+
+> site:target.com inurl:com_joomladate
+
+> site:target.com inurl:com_joomradio
+
+> site:target.com inurl:component/content/
+
+> site:target.com inurl:component/content/?view=featured&format=feed&type=atom*
+
+> site:target.com inurl:index.php/plugins
+
+> site:target.com inurl:index.php/rss=feed
+
+> site:target.com inurl:index.php/using-joomla/extensions/modules/ intext:joomla! 1.7
+
+> site:target.com inurl:index.php/using-joomla/extensions/modules/19-sample-data-articles/joomla/50-upgraders
+
+> site:target.com inurl:index.php/using-joomla/extensions/plugins?format=feed&type=rss
+
+> site:target.com inurl:index.php/using/joomla
+
+> site:target.com inurl:index.php?format=feed&type=atom
+
+> site:target.com inurl:index.php?format=feed&type=rss
+
+> site:target.com inurl:index.php?option=com_joomlaconnect_be
+
+> site:target.com inurl:index.php?option=com_joomradio
+
+> silte:target.com inurl:using-joomla/extensions/templates/beez5/home-page-beez5
+
+> site:target.com inurl:joomla3.txt filetype:txt
+
 ### Symfony
 
 > site:target.com intitle:"index of" "symfony/config"
