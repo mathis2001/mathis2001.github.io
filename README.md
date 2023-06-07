@@ -238,8 +238,6 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:linkedin.com "target[.]com"
 
-## Dorks that work better w/o domain
-
 ### Bug Bounty programs and Vulnerability Disclosure Programs
 
 > "submit vulnerability report" | "powered by bugcrowd" | "powered by hackerone"
@@ -291,6 +289,90 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 > site:target.com inurl:nginx_status
 
 > site:target.com inurl:nginx.conf nginx site:github.com
+
+### PhpMyAdmin
+
+
+
+> site:target.com " phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
+
+> site:target.com " phpMyAdmin MySQL-Dump" filetype:txt
+
+> site:target.com "# phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
+
+> site:target.com "# phpMyAdmin MySQL-Dump" filetype:txt
+
+> site:target.com "Index of" inurl:phpmyadmin
+
+> site:target.com "Welcome to phpMyAdmin" " Create new database"
+
+> site:target.com "Welcome to phpMyAdmin" + "Username:" + "Password:" + "Language:" + "Afrikaans"
+
+> site:target.com "Welcome to phpMyAdmin" AND " Create new database"
+
+> site:target.com "phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
+
+> site:target.com "phpMyAdmin MySQL-Dump" filetype:txt
+
+> site:target.com "phpMyAdmin" "running on" inurl:"main.php"
+
+> site:target.com ext:sql intext:"-- phpMyAdmin SQL Dump" -site:github.*
+
+> site:target.com filetype:sql "phpmyAdmin SQL Dump" (pass|password|passwd|pwd)
+
+> site:target.com filetype:sql intext:wp_users phpmyadmin
+
+> site:target.com intext:"phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
+
+> site:target.com intext:"phpMyAdmin MySQL-Dump" filetype:txt
+
+> site:target.com intext:"phpMyAdmin" "running on" inurl:"main.php"
+
+> site:target.com intitle:"Index of" phpmyadmin
+
+> site:target.com intitle:"index of /phpmyadmin" modified
+
+> site:target.com intitle:phpMyAdmin
+
+> site:target.com intitle:phpMyAdmin "Welcome to phpMyAdmin *" "running on as root@"
+
+> site:target.com intitle:phpMyAdmin "Welcome to phpMyAdmin ***" "running on * as root@*"
+
+> site:target.com inurl:"/phpmyadmin/user_password.php
+
+> site:target.com inurl:"/phpmyadmin/user_password.php" -inurl:git
+
+> site:target.com inurl:"phpmyadmin/index.php" intext:"[ Edit ] [ Create PHP Code ] [ Refresh ]"
+
+> site:target.com inurl:.php? intext:CHARACTER_SETS,COLLATIONS, ?intitle:phpmyadmin
+
+> site:target.com inurl:/phpMyAdmin/setup/index.php?phpMyAdmin=
+
+> site:target.com inurl:/phpmyadmin/changelog.php -github -gitlab
+
+> site:target.com inurl:/phpmyadmin/index.php?db=
+
+> site:target.com inurl:\"/phpmyadmin/user_password.php
+
+> site:target.com inurl:main.php Welcome to phpMyAdmin
+
+> site:target.com inurl:main.php phpMyAdmin
+
+> site:target.com inurl:phpmyadmin/index.php & (intext:username & password & "Welcome to")
+
+> site:target.com inurl:phpmyadmin/themes intext:"pmahomme"
+
+> site:target.com phpMyAdmin SQL Dump
+
+> site:target.com phpMyAdmin dumps
+
+> site:target.com inurl:phpldapadmin/
+
+> site:target.com inutl:pma/
+
+> site:target.com inurl:phppgadmin/
+
+> site:target.com you really should fix this security hole by setting a password for user '.root'. inurl:/phpmyadmin intitle:localhost
 
 ### WordPress
 
