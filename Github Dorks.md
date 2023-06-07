@@ -14,99 +14,99 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ### Secrets
 
-> target.com private
+> "target.com" private
 
-> target.com ldap
+> "target.com" ldap
 
-> target.com password
+> "target.com" password
 
-> target.com passwd
+> "target.com" passwd
 
-> target.com pwd
+> "target.com" pwd
 
-> target.com secret
+> "target.com" secret
 
-> target.com Jenkins
+> "target.com" Jenkins
 
-> target.com OTP
+> "target.com" OTP
 
-> target.com authorizition
+> "target.com" authorizition
 
-> target.com ftp
+> "target.com" ftp
 
-> target.com dotfiles
+> "target.com" dotfiles
 
-> target.com JDBC
+> "target.com" JDBC
 
-> target.com key-keys
+> "target.com" key-keys
 
-> target.com send_keys-keys
+> "target.com" send_keys-keys
 
-> target.com send,key-keys
+> "target.com" send,key-keys
 
-> target.com token
+> "target.com" token
 
-> target.com user
+> "target.com" user
 
-> target.com login-singin
+> "target.com" login-singin
 
-> target.com passkey-passkeys
+> "target.com" passkey-passkeys
 
-> target.com pass
+> "target.com" pass
 
-> target.com SecretAccesKey
+> "target.com" SecretAccesKey
 
-> target.com app_AWS_SECRET_ACCESS_KEY
+> "target.com" app_AWS_SECRET_ACCESS_KEY
 
-> target.com AWS_SECRET_ACCESS_KEY
+> "target.com" AWS_SECRET_ACCESS_KEY
 
-> target.com credentials
+> "target.com" credentials
 
-> target.com config
+> "target.com" config
 
-> target.com security_credentials
+> "target.com" security_credentials
 
-> target.com connectionstring
+> "target.com" connectionstring
 
-> target.com ssh2_auth_password
+> "target.com" ssh2_auth_password
 
-> target.com BD_PASSWORD
+> "target.com" BD_PASSWORD
 
-> target.com api_key
+> "target.com" api_key
 
-> target.com “api keys”
+> "target.com" “api keys”
 
-> target.com authorization_bearer:
+> "target.com" authorization_bearer:
 
-> target.com oauth
+> "target.com" oauth
 
-> target.com auth
+> "target.com" auth
 
-> target.com authentication
+> "target.com" authentication
 
-> target.com client_secret
+> "target.com" client_secret
 
-> target.com api_token:
+> "target.com" api_token:
 
-> target.com “api token”
+> "target.com" “api token”
 
-> target.com client_id
+> "target.com" client_id
 
-> target.com user_password
+> "target.com" user_password
 
-> target.com user_pass
+> "target.com" user_pass
 
-> target.com passcode
+> "target.com" passcode
 
-> target.com client_secret
+> "target.com" client_secret
 
-> target.com password hash
+> "target.com" password hash
 
-> target.com user auth
+> "target.com" user auth
 
-> target.com api_hash
+> "target.com" api_hash
 
-> target.com api_id
+> "target.com" api_id
 
 #bash / #Python / #sql / #php ...
 language:<language> password
@@ -144,62 +144,115 @@ user:<users> ldap
 org:<company> https://
 org:<company> host:
 
-#Tips (Cherchez des vecteurs d'attaque externes)
-"<target>.atlassian" [<keyword>]
-"<target>.okta" [<keyword>]
-"corp.<target>" [<keyword>]
-"jira.<target>" [<keyword>]
-"<target>.oneline" [<keyword>]
-"<target>.service-now" [<keyword>]
+### Vecteurs externes
+  
+> "target.com.atlassian"
+  
+> "target.com.okta"
+  
+> "corp.target.com"
+  
+> "jira.target.com"
+  
+> "target.com.oneline"
+  
+> "target.com.service-now"
 
-#Génériques
-filename:manifest.xml
-filename:travis.yml
-filename:vim_settings.xml
-filename:database
-filename:prod.exs NOT prod.secret.exs
-filename:prod.secret.exs
-filename:.npmrc _auth
-filename:.dockercfg auth
-filename:WebServers.xml
-filename:.bash_history <Domain name>
-filename:sftp-config.json
-filename:sftp.json path:.vscode
-filename:secrets.yml password
-filename:.esmtprc password
-filename:passwd path:etc
-filename:dbeaver-data-sources.xml
-path:sites databases password
-filename:config.php dbpasswd
-filename:prod.secret.exs
-filename:configuration.php JConfig password
-filename:.sh_history
-shodan_api_key language:python
-filename:shadow path:etc
-JEKYLL_GITHUB_TOKEN
-filename:proftpdpasswd
-filename:.pgpass
-filename:idea14.key
-filename:hub oauth_token
-HEROKU_API_KEY language:json
-HEROKU_API_KEY language:shell
-SF_USERNAME salesforce
-filename:.bash_profile aws
-extension:json api.forecast.io
-filename:.env MAIL_HOST=smtp.gmail.com
-filename:wp-config.php
-extension:sql mysql dump
-filename:credentials aws_access_key_id
-filename:id_rsa or filename:id_dsa
-GitHub Dorks for Finding Languages
-language:python username
-language:php username
-language:sql username
-language:html password
-language:perl password
-language:shell username
-language:java api
-HOMEBREW_GITHUB_API_TOKEN language:shell
+### Generic
+ 
+> "target.com" filename:manifest.xml
+  
+> "target.com" filename:travis.yml
+  
+> "target.com" filename:vim_settings.xml
+  
+> "target.com" filename:database
+  
+> "target.com" filename:prod.exs NOT prod.secret.exs
+  
+> "target.com" filename:prod.secret.exs
+  
+> "target.com" filename:.npmrc _auth
+  
+> "target.com" filename:.dockercfg auth
+  
+> "target.com" filename:WebServers.xml
+  
+> "target.com" filename:.bash_history
+  
+> "target.com" filename:sftp-config.json
+  
+> "target.com" filename:sftp.json path:.vscode
+  
+> "target.com" filename:secrets.yml password
+  
+> "target.com" filename:.esmtprc password
+  
+> "target.com" filename:passwd path:etc
+  
+> "target.com" filename:dbeaver-data-sources.xml
+  
+> "target.com" path:sites databases password
+  
+> "target.com" filename:config.php dbpasswd
+  
+> "target.com" filename:prod.secret.exs
+  
+> "target.com" filename:configuration.php JConfig password
+  
+> "target.com" filename:.sh_history
+  
+> "target.com" shodan_api_key language:python
+  
+> "target.com" filename:shadow path:etc
+  
+> "target.com" JEKYLL_GITHUB_TOKEN
+  
+> "target.com" filename:proftpdpasswd
+  
+> "target.com" filename:.pgpass
+  
+> "target.com" filename:idea14.key
+  
+> "target.com" filename:hub oauth_token
+  
+> "target.com" HEROKU_API_KEY language:json
+  
+> "target.com" HEROKU_API_KEY language:shell
+  
+> "target.com" SF_USERNAME salesforce
+  
+> "target.com" filename:.bash_profile aws
+  
+> "target.com" extension:json api.forecast.io
+  
+> "target.com" filename:.env MAIL_HOST=smtp.gmail.com
+  
+> "target.com" filename:wp-config.php
+  
+> "target.com" extension:sql mysql dump
+  
+> "target.com" filename:credentials aws_access_key_id
+  
+> "target.com" filename:id_rsa or filename:id_dsa
+  
+> "target.com" GitHub Dorks for Finding Languages
+  
+> "target.com" language:python username
+  
+> "target.com" language:php username
+  
+> "target.com" language:sql username
+  
+> "target.com" language:html password
+  
+> "target.com" language:perl password
+  
+> "target.com" language:shell username
+  
+> "target.com" language:java api
+  
+> "target.com" HOMEBREW_GITHUB_API_TOKEN language:shell
 
 #Trouver des noms d'utilisateurs
 user:name (user:admin)
