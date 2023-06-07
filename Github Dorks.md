@@ -199,9 +199,7 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 > "target.com" filename:credentials aws_access_key_id
   
 > "target.com" filename:id_rsa or filename:id_dsa
-  
-> "target.com" GitHub Dorks for Finding Languages
-  
+    
 > "target.com" language:python username
   
 > "target.com" language:php username
