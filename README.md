@@ -250,6 +250,63 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com intitle:"index of" "wp-config.php.bak"
 
+> site:target.com "is proudly powered by WordPress"
+
+> site:target.com "plugins/wp-db-backup/wp-db-backup.php"
+
+> site:target.com filetype:txt inurl:wp-config.txt
+
+> site:target.com intext:"the WordPress" inurl:wp-config ext:txt
+
+> site:target.com inurl:"/wp-content/plugins/wp-mobile-detector/" ext:php
+
+> site:target.com inurl:"/wp-content/wpclone-temp/wpclone_backup/"
+
+> site:target.com inurl:"/wp-login.php?action=lostpassword"
+
+> site:target.com inurl:"wp-contentpluginsall-in-one-seo-pack"
+
+> site:target.com inurl:"wp-download.php?dl_id="
+
+> site:target.com inurl:"wp-license.php?file=../..//wp-config"
+
+> site:target.com inurl:"wp-security-audit-log" ext:log
+
+> site:target.com inurl:/wp-content/plugins/fgallery/
+
+> site:target.com inurl:/wp-content/plugins/inboundio-marketing/
+
+> site:target.com inurl:/wp-content/plugins/seo-pressor/classes/
+
+> site:target.com inurl:/wp-content/plugins/video-synchro-pdf
+
+> site:target.com inurl:/wp-content/plugins/wpSS/
+
+> site:target.com inurl:/wp-content/themes/tigin/
+
+> site:target.com inurl:/wp-content/themes/xunjin/
+
+> site:target.com inurl:/wp-content/uploads/ filetype:sql
+
+> site:target.com inurl:/wp-content/uploads/ninja-forms/ intitle:"index of"
+
+> site:target.com inurl:/wp-content/uploads/wp-backup-plus/
+
+> site:target.com inurl:/wp-content/w3tc/dbcache/
+
+> site:target.com inurl:/wp-content/wpbackitup_backups
+
+> site:target.com inurl:/wp-includes/certificates/
+
+> site:target.com inurl:wp-config.php intext:DB_PASSWORD
+
+> site:target.com inurl:wp-content intext:backup-db
+
+> site:target.com inurl:wp-login.php?action=register
+
+> site:target.com inurl:wp-mail.php  + "There doesn't seem to be any new mail."
+
+
 ### Drupal
 
 > site:target.com intext:"Powered by" & intext:Drupal & inurl:user
