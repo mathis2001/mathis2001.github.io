@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Dorker</title>
+    <title>Shodan Dorker</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -81,9 +81,9 @@
     </style>
 </head>
 <body>
-    <h1>Github Dorks Generator</h1>
+    <h1>Shodan Dorks Generator</h1>
 
-    <label for="domainInput">Enter a domain or a company name:</label>
+    <label for="domainInput">Enter a domain:</label>
     <input type="text" id="domainInput" placeholder="target.com">
     <button id="updateDomainButton">Update Domain</button>
     <ul id="dorkList"></ul>
@@ -99,7 +99,7 @@
         let originalDorks = [];
 
         async function fetchDorks() {
-            const url = "https://raw.githubusercontent.com/mathis2001/mathis2001.github.io/main/Github%20Dorks.md";
+            const url = "https://raw.githubusercontent.com/mathis2001/mathis2001.github.io/main/Shodan%20Dorks.md";
             const response = await fetch(url);
             const text = await response.text();
 
@@ -130,7 +130,7 @@
         let prevTitle = '';
 
         function createDorkListItem(dork, description) {
-            const googleLink = `https://github.com/search?q=${encodeURIComponent(dork)}`;
+            const googleLink = `https://www.shodan.io/search?query=${encodeURIComponent(dork)}`;
 
             const listItem = document.createElement("li");
 
@@ -162,7 +162,7 @@
             dorkLinks.forEach((link, index) => {
                 const originalDork = originalDorks[index];
                 const updatedDork = originalDork.replace(/target(?:\[?\.\]?|\.)com/g, domain);
-                const updatedLink = `https://github.com/search?q=${encodeURIComponent(updatedDork)}`;
+                const updatedLink = `https://www.shodan.io/search?query=${encodeURIComponent(updatedDork)}`;
 
                 link.textContent = updatedDork;
                 link.href = updatedLink;
