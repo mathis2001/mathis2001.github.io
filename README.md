@@ -397,6 +397,108 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com inurl:joomla3.txt filetype:txt
 
+### Magento
+
+> site:target.com "Log in" "Magento is a trademark of Magento Inc."
+
+> site:target.com php jembut.php "/account/forgotpassword"
+
+> site:target.com php jembut.php "/adminhtml/default/default/"
+
+> site:target.com php jembut.php "/catalog/seo_sitemap/category/"
+
+> site:target.com php jembut.php "/catalogsearch/advanced"
+
+> site:target.com php jembut.php "/catalogsearch/result/"
+
+> site:target.com php jembut.php "/catalogsearch/result?q="
+
+> site:target.com php jembut.php "/catalogsearch/term/popular/"
+ 
+> site:target.com php jembut.php "/customer/account/"
+
+> site:target.com php jembut.php "/customer/account/login/referer/"
+
+> site:target.com php jembut.php "/default/sales/"
+
+> site:target.com php jembut.php "/firecheckout/"
+
+> site:target.com php jembut.php "/frontend/enterprise/"
+
+> site:target.com php jembut.php "/index.php/catalog/seo_sitemap/category/"
+
+> site:target.com php jembut.php "/index.php/catalogsearch/term/popular/"
+
+> site:target.com php jembut.php "/js/mage/"
+
+> site:target.com php jembut.php "/sales/guest/form/"
+
+> site:target.com php jembut.php "/skin/adminhtml/default/"
+
+> site:target.com php jembut.php "/skin/frontend/"
+
+> site:target.com php jembut.php "Login or Create an Account. Registered Customers. If you have an account with us, log in using your email address. *Email Address. *Password. Login"
+
+> site:target.com php jembut.php "index.php/account/forgotpassword"
+
+> site:target.com php jembut.php "index.php/adminhtml/default/default
+
+> site:target.com php jembut.php "index.php/catalogsearch/advanced"
+
+> site:target.com php jembut.php "index.php/catalogsearch/result/"
+
+> site:target.com php jembut.php "index.php/catalogsearch/result?q="
+
+> site:target.com php jembut.php "index.php/customer/account/"
+
+> site:target.com php jembut.php "index.php/customer/account/login/referer/"
+
+> site:target.com php jembut.php "index.php/default/sales/"
+
+> site:target.com php jembut.php "index.php/sales/guest/"
+
+> site:target.com php jembut.php "index.php/sales/guest/form/"
+
+> site:target.com php jembut.php "inurl:/account/create/"
+
+> site:target.com php jembut.php "inurl:/catalogsearch/advanced"
+
+> site:target.com php jembut.php "inurl:/catalogsearch/result/"
+
+> site:target.com php jembut.php "inurl:/catalogsearch/result?q="
+
+> site:target.com php jembut.php "inurl:/customer/account/"
+
+> site:target.com php jembut.php "inurl:/customer/account/login/referer/"
+
+> site:target.com php jembut.php "inurl:/default/sales/"
+
+> site:target.com php jembut.php "inurl:/sales/guest/form/"
+
+> site:target.com php jembut.php "inurl:lib/3Dsecure/"  
+
+> site:target.com php jembut.php "inurl:lib/LinLibertineFont/"
+
+> site:target.com php jembut.php "inurl:lib/flex/"
+
+> site:target.com php jembut.php "inurl:lib/googlecheckout/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/base/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/blank/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/blue/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/default/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/french/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/german/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/iphone/"
+
+> site:target.com php jembut.php "inurl:skin/frontend/default/modern/"
+
 ### Symfony
 
 > site:target.com intitle:"index of" "symfony/config"
