@@ -276,6 +276,21 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com intitle:"Test Page for Apache" "It Worked!"
 
+### Nginx
+
+> site:target.com intitle:"index of" "nginx.log"
+
+> site:target.com intitle:"index of" "nginx"
+
+> site:target.com intitle:Test Page for the Nginx HTTP Server on Fedora
+
+> site:target.com intitle:\"Welcome to nginx!\" intext:\"Welcome to nginx on Debian!\" intext:\"Thank you for\"
+
+> site:target.com intitle: "Welcome to nginx!" + "Thank you for using nginx."
+
+> site:target.com inurl:nginx_status
+
+> site:target.com inurl:nginx.conf nginx site:github.com
 
 ### WordPress
 
@@ -346,7 +361,6 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 > site:target.com inurl:wp-login.php?action=register
 
 > site:target.com inurl:wp-mail.php  + "There doesn't seem to be any new mail."
-
 
 ### Drupal
 
