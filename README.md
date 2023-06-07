@@ -246,9 +246,36 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:*/security.txt "bounty"
 
-### Apache Server Status Exposed
+### Apache
 
 > site:target.com inurl:server-status apache
+
+> site:target.com filetype:log intext:org.apache.hadoop.hdfs
+
+> site:target.com intext:"This is Apache Hadoop release" "Local Logs"
+
+> site:target.com intitle:"Apache HTTP Server" intitle:"documentation"
+
+> site:target.com intitle:"Apache Status" "Apache Server Status for"
+
+> site:target.com intitle:"Apache Status" | intext:"Apache Server Status"
+
+> site:target.com intitle:"Apache Tomcat"
+
+> site:target.com intitle:"Apache2 Debian Default Page: It works"  
+
+> site:target.com intitle:"Apache::Status" (inurl:server-status | inurl:status.html | inurl:apache.html)
+
+> site:target.com intitle:"Object not found" netware "apache 1.."
+
+> site:target.com intitle:"Object not found!" intext:"Apache/2.0.* (Linux/SuSE)"
+
+> site:target.com intext:Apache/2.2.29 (Unix) mod_ssl/2.2.29 | intitle:"Index of /"
+
+> site:target.com "seeing this instead" intitle:"test page for apache"
+
+> site:target.com intitle:"Test Page for Apache" "It Worked!"
+
 
 ### WordPress
 
