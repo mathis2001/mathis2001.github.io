@@ -16,6 +16,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:*.target.com
 
+> site:*.*.target.com
+
+> site:*.*.*.target.com
+
 ### Find exposed FTP services
 
 > site:target.com intitle:"index of" inurl:ftp
