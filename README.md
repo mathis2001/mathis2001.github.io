@@ -16,6 +16,20 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:*.target.com
 
+### Find exposed FTP services
+
+> site:target.com intitle:"index of" inurl:ftp
+
+> site:target.com filetype:url +inurl:"ftp://" +inurl:";@"
+
+> site:target.com intitle:"FTP root at"
+
+> site:target.com inurl:FTP "ftp root at"
+
+> site:target.com name size "Last modified" inurl:ftp
+
+> site:target.com "Parent Directory" "Last modified" ftp
+
 ### Find exposed documents
 
 > site:"target[.]com" ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
