@@ -11,3 +11,7 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 ### TEST
 
 > site:target.com test
+
+### TEST
+
+> site:target.com test
