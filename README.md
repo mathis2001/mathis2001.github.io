@@ -188,7 +188,45 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ### Configuration files
 
-> inurl:config | inurl:env | inurl:setting | inurl:backup | ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini site:target[.]com
+> inurl:config | inurl:env | inurl:setting | inurl:backup | ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini site:target.com
+
+> site:target.com intitle:"index of" inurl:app.conf
+
+> site:target.com intitle:"index of" inurl:conf
+
+> site:target.com filetype:conf
+
+> site:target.com configuration filetype:txt
+
+> site:target.com inurl:config.inc
+
+> site:target.com password host inurl:config filetype:txt
+
+> site:target.com inurl:config password host
+
+> site:target.com filetype:conf
+
+> site:target.com inurl:conf.xml
+
+> site:target.com inurl:conf.js
+
+> site:target.com inurl:conf.json
+
+> site:target.com inurl:configuration.json
+
+> site:target.com inurl:configuration.js
+
+> site:target.com inurl:configuration.xml
+
+> site:target.com inurl:config secret host
+
+> site:target.com inurl:secret filetype:yaml
+
+> site:target.com inurl:conf filetype:xml
+
+> site:target.com inurl:Makefile.toml
+
+> site:target.com inurl:Makefile 
 
 ### Sensitive Parameters
 
@@ -291,8 +329,6 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 > site:target.com inurl:nginx.conf nginx site:github.com
 
 ### PhpMyAdmin
-
-
 
 > site:target.com " phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
 
