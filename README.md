@@ -410,6 +410,18 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com you really should fix this security hole by setting a password for user '.root'. inurl:/phpmyadmin intitle:localhost
 
+### Grafana
+
+> site:target.com intitle:"grafana" inurl:"/grafana/login" "Forgot your password"
+
+> site:target.com intitle:"Grafana - Home" inurl:/orgid
+
+> site:target.com inurl:login "Welcome to Grafana"
+
+> site:target.com "Welcome to Grafana" inurl:/orgid
+
+> site:target.com intitle:"Welcome to Grafana"
+
 ### WordPress
 
 > site:target.com inurl:/wp-admin/admin-ajax.php
