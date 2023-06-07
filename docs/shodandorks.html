@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Dorker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #212121;
+            color: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        label {
+            font-size: 1.2em;
+        }
+        input {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 5px;
+        }
+        button {
+            font-size: 1em;
+            background-color: #b50bdb;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        button:hover {
+            background-color: #b94bd1;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #b96fc9;
+            margin-left: 50px;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #b50bdb;
+        }
+        p {
+            margin: 0;
+        }
+        p.description {
+            margin: 20px;
+            font-weight: bold;
+        }
+        section {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        ul.link-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        ul.link-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Github Dorks Generator</h1>
+
+    <label for="domainInput">Enter a domain or a company name:</label>
+    <input type="text" id="domainInput" placeholder="target.com">
+    <button id="updateDomainButton">Update Domain</button>
+    <ul id="dorkList"></ul>
+    <section>
+        <h2>Additional Resources & Credits</h2>
+        <ul class="link-list">
+            <li><a href="https://mathis2001.github.io/" target="_blank">Google Dorks Generator</a></li>
+            <li><a href="https://s1rn3tz.gitbook.io/notes/pentest-web" target="_blank">Details and exploitation of results</a></li>
+            <li><a href="https://github.com/TakSec/google-dorks-bug-bounty/" target="_blank">Original page - TakSec</a></li>
+        </ul>
+    </section>
+    <script>
+        let originalDorks = [];
+
+        async function fetchDorks() {
+            const url = "https://raw.githubusercontent.com/mathis2001/mathis2001.github.io/main/Github%20Dorks.md";
+            const response = await fetch(url);
+            const text = await response.text();
+
+            const dorkList = document.getElementById("dorkList");
+            const regex = /(?:^### (.+)|^> (.+))/gm;
+            let match;
+            let title = '';
+            let firstDork = true;
+
+            while ((match = regex.exec(text)) !== null) {
+                if (match[1]) {
+                    // Title match
+                    title = match[1];
+                } else {
+                    // Dork match
+                    if (firstDork) {
+                        firstDork = false;
+                        continue;
+                    }
+                    const dork = match[2];
+                    originalDorks.push(dork);
+                    const listItem = createDorkListItem(dork, title);
+                    dorkList.appendChild(listItem);
+                }
+            }
+        }
+
+        let prevTitle = '';
+
+        function createDorkListItem(dork, description) {
+            const googleLink = `https://github.com/search?q=${encodeURIComponent(dork)}`;
+
+            const listItem = document.createElement("li");
+
+            if (description && description !== prevTitle) {
+                const desc = document.createElement("p");
+                desc.textContent = description;
+                desc.classList.add("description");
+                listItem.appendChild(desc);
+                prevTitle = description;
+            }
+
+            const link = document.createElement("a");
+            link.href = googleLink;
+            link.textContent = dork;
+            link.classList.add("dorkLink");
+            link.target = "_blank";
+
+            listItem.appendChild(link);
+
+            return listItem;
+        }
+
+        function updateDomain() {
+            const domainInput = document.getElementById("domainInput");
+            const domain = domainInput.value;
+            if (!domain) return;
+
+            const dorkLinks = document.querySelectorAll(".dorkLink");
+            dorkLinks.forEach((link, index) => {
+                const originalDork = originalDorks[index];
+                const updatedDork = originalDork.replace(/target(?:\[?\.\]?|\.)com/g, domain);
+                const updatedLink = `https://github.com/search?q=${encodeURIComponent(updatedDork)}`;
+
+                link.textContent = updatedDork;
+                link.href = updatedLink;
+            });
+        }
+
+        const updateDomainButton = document.getElementById("updateDomainButton");
+        updateDomainButton.addEventListener("click", updateDomain);
+
+        fetchDorks();
+    </script>
+</body>
+</html>
