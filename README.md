@@ -712,9 +712,19 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 ### CVEs
 
+CVE-2023-25157
+
 > site:target.com inurl:/geoserver/web/ (intext:2.21.4 | intext:2.22.2)
 
 > site:target.com inurl:"/geoserver/ows?service=wfs"
+
+CVE‑2023‑29489
+
+> site:target.com "cpanel username" "cpanel password" ext:txt
+
+> site:target.com inurl:Cpanel/login.aspx
+
+> site:target.com inurl:/cpanelwebcall/
 
 ---
 
