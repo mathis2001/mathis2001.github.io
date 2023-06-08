@@ -50,6 +50,8 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com intext:"index of /"
 
+> site:target.com intitle:"index of"
+
 > site:target.com intitle:"index of" "docker-compose.yml"
 
 > site:target.com intitle:"index of"|"access_token.json"
