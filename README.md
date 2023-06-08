@@ -710,6 +710,11 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > inurl:"/db/development.sqlite3" "target.com"
 
+### CVEs
+
+> site:target.com inurl:/geoserver/web/ (intext:2.21.4 | intext:2.22.2)
+
+> site:target.com inurl:"/geoserver/ows?service=wfs"
 
 ---
 
