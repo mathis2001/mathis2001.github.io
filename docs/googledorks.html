@@ -83,8 +83,6 @@
 <body>
     <h1>Google Dorks Generator</h1>
     
-    <div id="summaryContainer"></div>
-
     <label for="domainInput">Enter a domain:</label>
     <input type="text" id="domainInput" placeholder="target.com">
     <button id="updateDomainButton">Update Domain</button>
@@ -117,23 +115,12 @@
             let title = '';
             let firstDork = true;
             
-            // Append the summary to the summaryContainer
-            function appendSummaryLink(title) {
-                const summaryContainer = document.getElementById("summaryContainer");
-                const summaryLink = document.createElement("a");
-                const anchor = title.replace(/\s+/g, "-").toLowerCase();
-                summaryLink.href = "#" + anchor;
-                summaryLink.textContent = title;
-                summaryLink.classList.add("summaryLink");
-                summaryContainer.appendChild(summaryLink);
-                dorkList.insertAdjacentHTML('beforebegin', `<a name="${anchor}"></a>`);
         }
 
             while ((match = regex.exec(text)) !== null) {
                 if (match[1]) {
                     // Title match
                     title = match[1];
-                    appendSummaryLink(title);
                 } else {
                     // Dork match
                     if (firstDork) {
