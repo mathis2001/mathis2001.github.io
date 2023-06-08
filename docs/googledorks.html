@@ -121,6 +121,7 @@
             function appendSummaryLink(title) {
                 const summaryContainer = document.getElementById("summaryContainer");
                 const summaryLink = document.createElement("a");
+                const anchor = title.replace(/\s+/g, "-").toLowerCase();
                 summaryLink.href = "#" + anchor;
                 summaryLink.textContent = title;
                 summaryLink.classList.add("summaryLink");
