@@ -82,6 +82,8 @@
 </head>
 <body>
     <h1>Google Dorks Generator</h1>
+    
+    <div id="summaryContainer"></div>
 
     <label for="domainInput">Enter a domain:</label>
     <input type="text" id="domainInput" placeholder="target.com">
@@ -173,6 +175,26 @@
                 link.textContent = updatedDork;
                 link.href = updatedLink;
             });
+        }
+        
+        // Append the summary to the summaryContainer
+        function appendSummaryLink(title) {
+            const summaryContainer = document.getElementById("summaryContainer");
+            const summaryLink = document.createElement("a");
+            summaryLink.href = "#" + title.replace(/\s+/g, "-").toLowerCase(); // Generate a linkable ID
+            summaryLink.textContent = title;
+            summaryLink.classList.add("summaryLink");
+            summaryContainer.appendChild(summaryLink);
+        }
+
+        // Call appendSummaryLink when a title is found
+        while ((match = regex.exec(text)) !== null) {
+            if (match[1]) {
+                // Title match
+                title = match[1];
+                appendSummaryLink(title); // Add summary link for each title
+            }
+            // Remaining code
         }
 
         const updateDomainButton = document.getElementById("updateDomainButton");
