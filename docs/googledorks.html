@@ -121,10 +121,11 @@
             function appendSummaryLink(title) {
                 const summaryContainer = document.getElementById("summaryContainer");
                 const summaryLink = document.createElement("a");
-                summaryLink.href = "#" + title.replace(/\s+/g, "-").toLowerCase(); // Generate a linkable ID
+                summaryLink.href = "#" + anchor;
                 summaryLink.textContent = title;
                 summaryLink.classList.add("summaryLink");
                 summaryContainer.appendChild(summaryLink);
+                dorkList.insertAdjacentHTML('beforebegin', `<a name="${anchor}"></a>`);
         }
 
             while ((match = regex.exec(text)) !== null) {
