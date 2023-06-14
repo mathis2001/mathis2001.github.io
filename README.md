@@ -248,6 +248,8 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:jfrog.io "target[.]com"
 
+> site:target.com inurl:/ui/repos/tree/general
+
 ### Firebase
 
 > site:firebaseio.com "target[.]com"
