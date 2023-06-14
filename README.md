@@ -38,6 +38,8 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:"target[.]com" ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
 
+> site:*.*.target.com -ext:pdf | ext: xlsx
+
 ### Find exposed git files
 
 > site:target.com "index of" inurl:.git
@@ -731,6 +733,10 @@ CVE‑2023‑29489
 > site:target.com inurl:Cpanel/login.aspx
 
 > site:target.com inurl:/cpanelwebcall/
+
+CVE-2023-34362
+
+> site:target.com inurl:human.aspx intext:moveit
 
 ---
 
