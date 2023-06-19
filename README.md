@@ -274,6 +274,8 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com ”choose file”
 
+> site:target.com inurl:"/downloader.php?file=" 
+
 ### Dependency confusion (packages files)
 
 > site:*target.com inurl:/ui/package.json
@@ -743,6 +745,10 @@ CVE‑2023‑29489
 CVE-2023-34362
 
 > site:target.com inurl:human.aspx intext:moveit
+
+CVE-2023-23333
+
+> site:target.com inurl:"/downloader.php?file=" 
 
 ---
 
