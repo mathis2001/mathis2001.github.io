@@ -726,6 +726,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > inurl:"/db/development.sqlite3" "target.com"
 
+### Nuxtjs
+
+> site:target.com inurl:/_nuxt/
+
 ### CVEs
 
 CVE-2023-25157
