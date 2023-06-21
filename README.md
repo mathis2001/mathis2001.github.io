@@ -138,6 +138,8 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > inurl:gitlab "target.com"
 
+> site:xmind.app "target.com" 
+
 ### Cloud Storage
 
 > site:s3.amazonaws.com "target.com"
