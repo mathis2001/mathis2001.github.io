@@ -706,6 +706,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:target.com php jembut.php "inurl:skin/frontend/default/modern/"
 
+### SPIP
+
+> site:target.com inurl:/spip.php
+
 ### Symfony
 
 > site:target.com intitle:"index of" "symfony/config"
