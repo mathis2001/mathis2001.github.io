@@ -220,6 +220,8 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > target.com "X-Amz-Bucket-Region"
 
+> target.com http.favicon.hash:116323821
+
 ### Domain takeover
 
 > ssl:target.com http.html:"The specified bucket does not exist"
