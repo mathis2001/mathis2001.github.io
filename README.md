@@ -758,7 +758,11 @@ CVE-2023-34362
 
 CVE-2023-23333
 
-> site:target.com inurl:"/downloader.php?file=" 
+> site:target.com inurl:"/downloader.php?file="
+
+CVE-2023-24488
+
+> site:target.com inurl:?post_logout_redirect_uri
 
 ---
 
