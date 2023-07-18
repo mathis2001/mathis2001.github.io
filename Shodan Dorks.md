@@ -136,23 +136,23 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > target.com http.title:"DisallowedHost at /"
 
-> target.com %22Set-Cookie%3A+webvpn%22
+> target.com "Set-Cookie: webvpn"
 
-> target.com %22webvpn%3D%22
+> target.com "webvpn%3D"
 
-> target.com Server%3A+xxxxxxxx-xxxxx+-ssl%3A%22fortinet%22
+> target.com Server:+xxxxxxxx-xxxxx+-ssl:"fortinet"
 
-> target.com ssl%3A%22fortinet%22
+> target.com ssl:"fortinet"
 
-> target.com title%3A%22SSL+VPN+Service%22
+> target.com title:"SSL+VPN+Service"
 
-> target.com Server%3A+xxxxxxxx-xxxxx+ssl%3A%22fortinet%22
+> target.com Server:+xxxxxxxx-xxxxx+ssl:"fortinet"
 
-> target.com http.html_hash%3A-1454941180
+> target.com http.html_hash:-1454941180
 
-> target.com http.favicon.hash%3A945408572
+> target.com http.favicon.hash:945408572
 
-> target.com http.html_hash%3A-628873716
+> target.com http.html_hash:-628873716
 
 ### Information gathering / disclosure
 
