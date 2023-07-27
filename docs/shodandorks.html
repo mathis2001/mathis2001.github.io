@@ -154,24 +154,24 @@
             return listItem;
         }
 
-        function updateDomain() {
-            const domainInput = document.getElementById("domainInput");
-            const domain = domainInput.value;
-            if (!domain) return;
-
+        function updateDomain(domain) {
             const dorkLinks = document.querySelectorAll(".dorkLink");
             dorkLinks.forEach((link, index) => {
                 const originalDork = originalDorks[index];
-                const updatedDork = originalDork.replace(/target(?:\[?\.\]?|\.)com/g, domain);
-                const updatedLink = `https://www.shodan.io/search?query=${encodeURIComponent(updatedDork)}`;
+                const updatedDork = originalDork.replace(/example(?:\[?\.\]?|\.)com/g, domain);
+                const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(updatedDork)}`;
 
                 link.textContent = updatedDork;
                 link.href = updatedLink;
             });
         }
 
-        const updateDomainButton = document.getElementById("updateDomainButton");
-        updateDomainButton.addEventListener("click", updateDomain);
+        // Get domainInput value from the URL and call updateDomain() with that value
+        const urlParams = new URLSearchParams(window.location.search);
+        const domainInputValue = urlParams.get('domainInput');
+        if (domainInputValue) {
+            updateDomain(domainInputValue);
+        }
 
         fetchDorks();
     </script>
