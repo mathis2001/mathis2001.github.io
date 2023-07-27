@@ -126,7 +126,18 @@
         }
 
         let prevTitle = '';
-            fetchDorks();
+
+  	function updateDomain(domain) {
+            const dorkLinks = document.querySelectorAll(".dorkLink");
+            dorkLinks.forEach((link, index) => {
+                const originalDork = originalDorks[index];
+                const updatedDork = originalDork.replace(/target(?:\[?\.\]?|\.)com/g, domain);
+                const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(updatedDork)}`;
+
+                link.textContent = updatedDork;
+                link.href = updatedLink;
+            });
+        }
 
         function createDorkListItem(dork, description) {
             const googleLink = `https://www.shodan.io/search?query=${encodeURIComponent(dork)}`;
@@ -152,20 +163,11 @@
             return listItem;
         }
 
-        function updateDomain(domain) {
-            const dorkLinks = document.querySelectorAll(".dorkLink");
-            dorkLinks.forEach((link, index) => {
-                const originalDork = originalDorks[index];
-                const updatedDork = originalDork.replace(/example(?:\[?\.\]?|\.)com/g, domain);
-                const updatedLink = `https://www.shodan.io/search?query=${encodeURIComponent(updatedDork)}`;
+        async function main() {
+            // Esperar a que se complete fetchDorks antes de continuar
+            await fetchDorks();
 
-                link.textContent = updatedDork;
-                link.href = updatedLink;
-            });
-        }
-
-        // Wait for the DOM content to load before adding event listeners
-        document.addEventListener("DOMContentLoaded", () => {
+            // Resto del código que se ejecutará después de obtener los dorks
             const updateDomainButton = document.getElementById("updateDomainButton");
             const domainInput = document.getElementById("domainInput");
 
@@ -175,7 +177,17 @@
                 updateDomain(domain);
             });
 
-        });
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainInputValue = urlParams.get('domainInput');
+            if (domainInputValue) {
+                updateDomain(domainInputValue);
+            }
+        }
+
+        // Ejecutar la función principal al cargar la página
+        main();
+
+
     </script>
 </body>
 </html>
