@@ -126,6 +126,7 @@
         }
 
         let prevTitle = '';
+            fetchDorks();
 
         function createDorkListItem(dork, description) {
             const googleLink = `https://www.shodan.io/search?query=${encodeURIComponent(dork)}`;
@@ -174,7 +175,6 @@
                 updateDomain(domain);
             });
 
-            fetchDorks();
         });
     </script>
 </body>
