@@ -166,14 +166,19 @@
             });
         }
 
-        // Get domainInput value from the URL and call updateDomain() with that value
-        const urlParams = new URLSearchParams(window.location.search);
-        const domainInputValue = urlParams.get('domainInput');
-        if (domainInputValue) {
-            updateDomain(domainInputValue);
-        }
+        // Wait for the DOM content to load before adding event listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            const updateDomainButton = document.getElementById("updateDomainButton");
+            const domainInput = document.getElementById("domainInput");
 
-        fetchDorks();
+            updateDomainButton.addEventListener("click", () => {
+                const domain = domainInput.value;
+                if (!domain) return;
+                updateDomain(domain);
+            });
+
+            fetchDorks();
+        });
     </script>
 </body>
 </html>
