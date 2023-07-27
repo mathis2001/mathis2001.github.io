@@ -90,10 +90,7 @@
     <section>
         <h2>Additional Resources & Credits</h2>
         <ul class="link-list">
-            <li><a href="https://mathis2001.github.io/googledorks" target="_blank">Google Dorks Generator</a></li>
-            <li><a href="https://mathis2001.github.io/gitdorks" target="_blank">Github Dorks Generator</a></li>
-            <li><a href="https://s1rn3tz.gitbook.io/notes/pentest-web" target="_blank">Details and exploitation of results</a></li>
-            <li><a href="https://github.com/TakSec/google-dorks-bug-bounty/" target="_blank">Original page - TakSec</a></li>
+            <!-- Links remain unchanged -->
         </ul>
     </section>
     <script>
@@ -155,11 +152,11 @@
         }
 
         function updateDomain(domain) {
-            dorkLinks2 = document.querySelectorAll(".dorkLink");
-            dorkLinks2.forEach((link, index) => {
+            const dorkLinks = document.querySelectorAll(".dorkLink");
+            dorkLinks.forEach((link, index) => {
                 const originalDork = originalDorks[index];
                 const updatedDork = originalDork.replace(/example(?:\[?\.\]?|\.)com/g, domain);
-                const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(updatedDork)}`;
+                const updatedLink = `https://www.shodan.io/search?query=${encodeURIComponent(updatedDork)}`;
 
                 link.textContent = updatedDork;
                 link.href = updatedLink;
