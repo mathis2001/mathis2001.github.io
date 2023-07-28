@@ -132,7 +132,7 @@
             dorkLinks.forEach((link, index) => {
                 const originalDork = originalDorks[index];
                 const updatedDork = originalDork.replace(/target(?:\[?\.\]?|\.)com/g, domain);
-                const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(updatedDork)}`;
+                const updatedLink = `https://www.shodan.io/search?query=${encodeURIComponent(updatedDork)}`;
 
                 link.textContent = updatedDork;
                 link.href = updatedLink;
