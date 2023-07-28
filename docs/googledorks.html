@@ -160,12 +160,9 @@
 
             return listItem;
         }
+ let prevTitle = '';
 
-        function updateDomain() {
-            const domainInput = document.getElementById("domainInput");
-            const domain = domainInput.value;
-            if (!domain) return;
-
+  	function updateDomain(domain) {
             const dorkLinks = document.querySelectorAll(".dorkLink");
             dorkLinks.forEach((link, index) => {
                 const originalDork = originalDorks[index];
@@ -177,10 +174,53 @@
             });
         }
 
-        const updateDomainButton = document.getElementById("updateDomainButton");
-        updateDomainButton.addEventListener("click", updateDomain);
+        function createDorkListItem(dork, description) {
+            const googleLink = `https://www.google.com/search?q=${encodeURIComponent(dork)}`;
 
-        fetchDorks();
+            const listItem = document.createElement("li");
+
+            if (description && description !== prevTitle) {
+                const desc = document.createElement("p");
+                desc.textContent = description;
+                desc.classList.add("description");
+                listItem.appendChild(desc);
+                prevTitle = description;
+            }
+
+            const link = document.createElement("a");
+            link.href = googleLink;
+            link.textContent = dork;
+            link.classList.add("dorkLink");
+            link.target = "_blank";
+
+            listItem.appendChild(link);
+
+            return listItem;
+        }
+
+        async function main() {
+            // Esperar a que se complete fetchDorks antes de continuar
+            await fetchDorks();
+
+            // Resto del código que se ejecutará después de obtener los dorks
+            const updateDomainButton = document.getElementById("updateDomainButton");
+            const domainInput = document.getElementById("domainInput");
+
+            updateDomainButton.addEventListener("click", () => {
+                const domain = domainInput.value;
+                if (!domain) return;
+                updateDomain(domain);
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainInputValue = urlParams.get('domainInput');
+            if (domainInputValue) {
+                updateDomain(domainInputValue);
+            }
+        }
+
+        // Ejecutar la función principal al cargar la página
+        main();
     </script>
 </body>
 </html>
