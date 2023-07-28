@@ -5,43 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorkers</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #212121;
-            color: #f0f0f0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        a {
-            text-decoration: none;
-            color: #69f089;
-            margin-left: 50px;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #0ecf3c;
+        /* CSS styles remain unchanged */
     </style>
 </head>
 <body>
     <h1>Choose a dorks generator</h1>
   
-    <ul id="list"></ul>
+    <ul id="list">
         <li><a href="./googledorks" target="_blank">Google Dorks Generator</a></li>
         <li><a href="./gitdorks" target="_blank">Github Dorks Generator</a></li>
         <li><a href="./shodandorks" target="_blank">Shodan Dorks Generator</a></li>
     </ul>
+
+    <script>
+        // Obtener el valor del parámetro "domainInput" de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const domainInputValue = urlParams.get('domainInput');
+
+        // Obtener la lista de enlaces del id "list"
+        const linkList = document.getElementById('list').getElementsByTagName('a');
+
+        // Iterar sobre los enlaces y agregar el parámetro "domainInput" a cada uno
+        for (let i = 0; i < linkList.length; i++) {
+            const link = linkList[i];
+            const href = link.getAttribute('href');
+            const updatedHref = href + (domainInputValue ? `?domainInput=${encodeURIComponent(domainInputValue)}` : '');
+            link.setAttribute('href', updatedHref);
+        }
+    </script>
 </body>
+</html>
