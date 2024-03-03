@@ -20,6 +20,10 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > site:*.*.*.target.com
 
+### Find subdomain-takeover
+
+> site:*.target.com intext:"PAGE NOT FOUND" | intext:"project not found" | intext:"Repository not found" | intext:"domain does not exist" | intext:"This page could not be found" | intext:"404 Blog is not found" | intext:"No settings were found for this company" | intext:"domain name is invalid"
+
 ### Find exposed FTP services
 
 > site:target.com intitle:"index of" inurl:ftp
