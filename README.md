@@ -144,7 +144,9 @@ Credits to TakSec: https://taksec.github.io/google-dorks-bug-bounty/
 
 > inurl:gitlab "target.com"
 
-> site:xmind.app "target.com" 
+> site:xmind.app "target.com"
+
+> site:linktr.ee "target.com" 
 
 ### Cloud Storage
 
